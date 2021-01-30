@@ -35,7 +35,7 @@ function handleTicketChange(ticket, isIncrease) {
     calculateTotal();
 }
 
-
+//calculate subtotal , tax , finaltotal
 function calculateTotal() {
     const firstCount = getInputValue('first');
     const economyCount = getInputValue('economy');
@@ -57,20 +57,25 @@ function getInputValue(ticket) {
 }
 
 
-// Click on Book Now
+//click on book now
 function handleClickBookNow() {
-    bookNow = document.getElementById('book-now');
-    bookNow.innerText = "Booking Confirmed";
-    bookNow.style.backgroundColor = "green";
-    displayNone("first-count");
-    displayNone("economy-count");
-    displayNone("operator");
-    displayNone("operator-2");
-    displayBlock("show-first");
-    displayBlock("show-economy")
-
+    const finalTotal = document.getElementById('final-total');
+    grandTotal = finalTotal.innerText;
+    if (grandTotal === '00') {
+        alert("You have not select any ticket");
+    }
+    else{
+        bookNow = document.getElementById('book-now');
+        bookNow.innerText = "Booking Confirmed";
+        bookNow.style.backgroundColor = "green";
+        displayNone("first-count");
+        displayNone("economy-count");
+        displayNone("operator");
+        displayNone("operator-2");
+        displayBlock("show-first");
+        displayBlock("show-economy");
+    }
 }
-
 function displayNone(id) {
     document.getElementById(id).style.display = "none";
 }
