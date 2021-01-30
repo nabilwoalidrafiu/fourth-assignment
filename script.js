@@ -53,18 +53,22 @@ function getInputValue(ticket) {
 
 
 // Click on Book Now
-document.getElementById('book-now').addEventListener('click', function () {
+function handleClickBookNow() {
     bookNow = document.getElementById('book-now');
     bookNow.innerText = "Booking Confirmed";
     bookNow.style.backgroundColor = "green";
-    document.getElementById('first-count').style.display = "none";
-    document.getElementById('economy-count').style.display = "none";
+    displayNone("first-count");
+    displayNone("economy-count");
+    displayNone("operator");
+    displayNone("operator-2");
+    displayBlock("show-first");
+    displayBlock("show-economy")
+    
+}
 
-
-    document.getElementById('show-first').style.display = "block";
-    document.getElementById('show-economy').style.display = "block";
-    document.getElementById("operator").style.display = "none";
-    document.getElementById("operator-2").style.display = "none";
-
-})
-
+function displayNone(id) {
+    document.getElementById(id).style.display = "none";
+}
+function displayBlock(id) {
+    document.getElementById(id).style.display = "block";
+}
