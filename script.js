@@ -63,8 +63,7 @@ function handleClickBookNow() {
     grandTotal = finalTotal.innerText;
     if (grandTotal === '00') {
         alert("You have not select any ticket");
-    }
-    else{
+    } else {
         bookNow = document.getElementById('book-now');
         bookNow.innerText = "Booking Confirmed";
         bookNow.style.backgroundColor = "green";
@@ -76,6 +75,7 @@ function handleClickBookNow() {
         displayBlock("show-economy");
     }
 }
+
 function displayNone(id) {
     document.getElementById(id).style.display = "none";
 }
