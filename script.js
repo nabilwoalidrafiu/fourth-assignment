@@ -63,7 +63,8 @@ function handleClickBookNow() {
     grandTotal = finalTotal.innerText;
     if (grandTotal === '00') {
         alert("You have not select any ticket");
-    } else {
+    } 
+    else {
         bookNow = document.getElementById('book-now');
         bookNow.innerText = "Booking Confirmed";
         bookNow.style.backgroundColor = "green";
@@ -73,6 +74,7 @@ function handleClickBookNow() {
         displayNone("operator-2");
         displayBlock("show-first");
         displayBlock("show-economy");
+        disableInput();
     }
 }
 
@@ -82,4 +84,12 @@ function displayNone(id) {
 
 function displayBlock(id) {
     document.getElementById(id).style.display = "block";
+}
+
+function disableInput() {
+    let disableInput = document.getElementsByTagName("input");
+    for (let i = 0; i < disableInput.length; i++) {
+        const element = disableInput[i];
+        element.disabled = true;
+    }
 }
