@@ -19,12 +19,12 @@ function handleTicketChange(ticket, isIncrease) {
     if (ticket == 'first') {
         ticketTotal = ticketCount * 150;
         document.getElementById('show-first-number').innerText = ticketNewCount;
-        document.getElementById('show-first-amount').innerText = "$" + ticketNewCount * 150;
+        document.getElementById('show-first-amount').innerText = " $" + ticketNewCount * 150;
     }
     if (ticket == 'economy') {
         ticketTotal = ticketCount * 100;
         document.getElementById('show-economy-number').innerText = ticketNewCount;
-        document.getElementById('show-economy-amount').innerText = "$" + ticketNewCount * 100;
+        document.getElementById('show-economy-amount').innerText = " $" + ticketNewCount * 100;
     }
 
     calculateTotal();
@@ -57,17 +57,14 @@ document.getElementById('book-now').addEventListener('click', function () {
     bookNow = document.getElementById('book-now');
     bookNow.innerText = "Booking Confirmed";
     bookNow.style.backgroundColor = "green";
-    const hideFirst = document.getElementById('first-count')
-    hideFirst.style.display = "none";
-    const hideEconomy = document.getElementById('economy-count');
-    hideEconomy.style.display = "none";
+    document.getElementById('first-count').style.display = "none";
+    document.getElementById('economy-count').style.display = "none";
 
 
-    const showFirst = document.getElementById('show-first');
-    showFirst.style.display = "block";
-    const showEconomy = document.getElementById('show-economy');
-    showEconomy.style.display = "block";
+    document.getElementById('show-first').style.display = "block";
+    document.getElementById('show-economy').style.display = "block";
     document.getElementById("operator").style.display = "none";
     document.getElementById("operator-2").style.display = "none";
 
 })
+
