@@ -1,10 +1,8 @@
 document.getElementById("first-count").defaultValue = "0";
 document.getElementById("economy-count").defaultValue = "0";
 
-function name(params) {
 
-}
-
+// click on operator
 function handleTicketChange(ticket, isIncrease) {
     const ticketInput = document.getElementById(ticket + '-count');
     const ticketCount = getInputValue(ticket);
@@ -20,12 +18,18 @@ function handleTicketChange(ticket, isIncrease) {
     let ticketTotal = 0;
     if (ticket == 'first') {
         ticketTotal = ticketCount * 150;
+        document.getElementById('show-first-number').innerText = ticketNewCount;
+        document.getElementById('show-first-amount').innerText = "$" + ticketNewCount * 150;
     }
     if (ticket == 'economy') {
         ticketTotal = ticketCount * 100;
+        document.getElementById('show-economy-number').innerText = ticketNewCount;
+        document.getElementById('show-economy-amount').innerText = "$" + ticketNewCount * 100;
     }
+
     calculateTotal();
 }
+
 
 function calculateTotal() {
     const firstCount = getInputValue('first');
@@ -48,25 +52,22 @@ function getInputValue(ticket) {
 }
 
 
+// Click on Book Now
 document.getElementById('book-now').addEventListener('click', function () {
-        document.getElementById('first-increase').style.pointerEvents = 'none';
-        document.getElementById('first-decrease').style.pointerEvents = 'none';
-        document.getElementById('economy-increase').style.pointerEvents = 'none';
-        document.getElementById('economy-decrease').style.pointerEvents = 'none';
+    bookNow = document.getElementById('book-now');
+    bookNow.innerText = "Booking Confirmed";
+    bookNow.style.backgroundColor = "green";
+    const hideFirst = document.getElementById('first-count')
+    hideFirst.style.display = "none";
+    const hideEconomy = document.getElementById('economy-count');
+    hideEconomy.style.display = "none";
 
-        // document.getElementsByTagName('span').style.pointerEvents = 'none';
-        firstInput=document.getElementById("first-count").disabled = true;
-        firstInput.disabled = true;
-        economyInput = document.getElementById('economy-count');
-        economyInput.disabled = true;
-        // economyInput.innerText = "1 ticket $100"
 
-        input = document.getElementsByClassName("inp-style")
-        input.disabled = true;
-        bookNow = document.getElementById('book-now');
-        bookNow.innerText = "Booking Confirmed";
-        bookNow.style.backgroundColor = "green";
-        
-    
+    const showFirst = document.getElementById('show-first');
+    showFirst.style.display = "block";
+    const showEconomy = document.getElementById('show-economy');
+    showEconomy.style.display = "block";
+    document.getElementById("operator").style.display = "none";
+    document.getElementById("operator-2").style.display = "none";
+
 })
-

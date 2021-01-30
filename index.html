@@ -28,11 +28,11 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
+        <div id="booking-form" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                <input class="inp-style fly" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -52,9 +52,10 @@
                 <div>
                     <label for="">First Class ($150)</label>
                     <input id="first-count" class="inp-style inp-width" type="text" name="">
+                    <h5 id="show-first"><span id="show-first-number"> 0 </span> First Class ticket <span id="show-first-amount">$00</span></h5>
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span onclick="handleTicketChange('first', true)" id="first-increase">+</span>
+                    <p id="operator"> <span onclick="handleTicketChange('first', true)" id="first-increase">+</span>
                         <span onclick="handleTicketChange('first', false);" id="first-decrease">-</span></p>
                 </div>
             </div>
@@ -63,9 +64,10 @@
                 <div>
                     <label for="">Economy ($100)</label>
                     <input id="economy-count" class="inp-style inp-width" type="text">
+                    <h5 id="show-economy"><span id="show-economy-number"> 0 </span> Economy ticket <span id="show-economy-amount">$00</span></h5>
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span onclick="handleTicketChange('economy', true)" id="economy-increase">+</span> 
+                    <p id="operator-2"> <span onclick="handleTicketChange('economy', true)" id="economy-increase">+</span> 
                         <span onclick="handleTicketChange('economy', false)" id="economy-decrease">-</span> </p>
                 </div>
             </div>
