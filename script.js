@@ -1,5 +1,10 @@
-document.getElementById("first-count").defaultValue = "0";
-document.getElementById("economy-count").defaultValue = "0";
+// setting default value
+defaultValue("first");
+defaultValue("economy");
+
+function defaultValue(ticket) {
+    document.getElementById(ticket + "-count").defaultValue = "0";
+}
 
 
 // click on operator
@@ -63,12 +68,13 @@ function handleClickBookNow() {
     displayNone("operator-2");
     displayBlock("show-first");
     displayBlock("show-economy")
-    
+
 }
 
 function displayNone(id) {
     document.getElementById(id).style.display = "none";
 }
+
 function displayBlock(id) {
     document.getElementById(id).style.display = "block";
 }
