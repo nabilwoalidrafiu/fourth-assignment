@@ -61,7 +61,7 @@ function getInputValue(ticket) {
 function handleClickBookNow() {
     const finalTotal = document.getElementById('final-total');
     grandTotal = finalTotal.innerText;
-    if (grandTotal === '00') {
+    if (grandTotal === '00' || grandTotal === '0') {
         alert("You have not select any ticket");
     } 
     else {
